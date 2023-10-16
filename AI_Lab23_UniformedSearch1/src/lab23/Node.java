@@ -1,9 +1,9 @@
-package Task123;
+package lab23;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Node implements Comparable<Node> {
+public class Node implements Comparable<Node>, Cloneable {
 	private String label;
 	private Node parent; // for printing the path from the start node to goal node
 	private double pathCost;// from the root node to this node
@@ -16,6 +16,19 @@ public class Node implements Comparable<Node> {
 
 	public Node(String label, int h) {
 		this.label = label;
+	}
+	
+	public Node(String label, Node parent, double pathCost, int depth, List<Edge> children) {
+		super();
+		this.label = label;
+		this.parent = parent;
+		this.pathCost = pathCost;
+		this.depth = depth;
+		this.children = children;
+	}
+	
+	public Node clone() {
+		return new Node(label, parent, pathCost, depth, children);
 	}
 
 	public String getLabel() {
@@ -102,4 +115,5 @@ public class Node implements Comparable<Node> {
 	public int compareTo(Node o) {
 		return this.label.compareTo(o.label);
 	}
+
 }

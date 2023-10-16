@@ -1,4 +1,4 @@
-package Task123;
+package lab23;
 
 import java.util.ArrayList;
 import java.util.Collections;

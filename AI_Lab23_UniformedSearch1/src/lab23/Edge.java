@@ -1,4 +1,4 @@
-package Task123;
+package lab23;
 
 public class Edge implements Comparable<Edge>{
 	private Node begin;
